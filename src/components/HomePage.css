@@ -276,7 +276,7 @@ text-align: center;
   .signin-button:hover {
     /* background:#403788; */
     background:var(--color-KfinRed);
-    box-shadow: 
+    /* box-shadow:  */
     /* inset 1rem 1rem 2rem rgba(0,0,0,.1),
     inset -1rem -1rem 2rem rgba(255,255,255,.5); */
   }
