@@ -36,7 +36,7 @@ function App() {
           </Route>
           <Route path="/excel">
             <Header/>
-            <TestComponent/>
+            <TestComponent style={{boxShadow : "6px 6px 12px #b8b9be,-6px -6px 12px #fff!important"}}/>
             {/* <Excel /> */}
           </Route>
           <Route path="/apichart">

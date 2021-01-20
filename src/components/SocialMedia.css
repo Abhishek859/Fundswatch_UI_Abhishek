@@ -8,6 +8,11 @@ section
   justify-content: center;
 }
 
+a{
+  align-items: center;
+ 
+}
+
 .icon-list
 {
   width: 100%;

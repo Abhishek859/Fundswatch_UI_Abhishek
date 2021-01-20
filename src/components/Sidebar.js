@@ -14,6 +14,7 @@ import data from "../Dataa/index";
 import { withWidth } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ClearIcon from '@material-ui/icons/Clear';
 
  function Sidebar() {
 
@@ -22,10 +23,12 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
           <div>
             <DimensionDragable id={x.id} style={{ margin: "8px" }} >
             
-              <Item>
-              <DragIndicatorIcon/>
+              <Item className="sidebar__dimensions">
+              <DragIndicatorIcon className = "dragicon" style={{color : "#8799AA",fontSize:"20px"}}/>
                 {x.title}
-                <OpenWithIcon/>
+                {/* <ZoomOutMapIcon style={{fontSize:"16px",marginLeft:"4px", transform:"rotate(45deg)",color : "#8799AA"}}/> */}
+                <ClearIcon className="crossicon" style={{fontSize:"16px",marginLeft:"4px",color : "var(--color-surface)"}}/>
+
                 </Item>
            
             </DimensionDragable>
@@ -35,7 +38,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
     
     return (
         <div className="body__sidebar">
-          <Item className="sidebar__title"style={{width:"154px", color: "#0776c5"}}><DragIndicatorIcon style={{color: "white", marginTop:"-5px"}}/><h4>Dimensions</h4> <ExpandMoreIcon/></Item>
+          <Item className="sidebar__title" style={{minWidth:"154px", height:"35px", color: "var(--color-KfinBlue)", fontStyle:"bold",marginBottom:"8px",fontSize:"14px"}}><h4 style={{margin:"auto"}}>Dimensions </h4><ExpandMoreIcon/></Item>
         <DimensionDroppable id="dimensions__drop">
         
         {temp}
@@ -49,12 +52,16 @@ export default Sidebar ;
 
 const Item = styled.div`
   display:flex;
-  justify-content : space-between; 
-  padding: 8px;
+  justify-content : space-between; \
+  height : 30px ;
+  padding: 0px 8px 0px 4px;
   color: #172B4D;
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: inset 2px 2px 5px #c1c9d2,inset -3px -3px 7px #fff!important;
+  background-color: var(--color-surface);
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 5px #c1c9d2,inset -3px -3px 7px #fff;
+  align-items : center ;
+  font-family : ratiomedium ;
+  font-size : 12px ;
 `;
 
 

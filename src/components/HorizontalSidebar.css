@@ -8,6 +8,45 @@
 
 .horizontal__title{
     text-align: center !important;
-    box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;
-    
+    font-family: ratiobold !important;
+    /* box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important; */
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff !important;
+    border: 0.0625rem solid white;
+    /* width:"154px"; */
+    color: var(--color-KfinBlue);
+    margin-right: 8px !important;
+    font-size: 14px;
+}
+
+
+.horizontalbar__reportvalues:active {
+    background : var(--color-KfinBlue) !important;
+    box-shadow: inset 6px 6px 12px #313972,
+    inset -6px -6px 12px #434d9a !important;
+    color : white ;
+}
+
+.horizontalbar__reportvalues:active > .crossicon{
+    color : var(--color-KfinBlue) !important ;   
+}
+
+.horizontalbar__reportvalues:active > svg {
+    color: whitesmoke !important ;
+}
+
+.horizontalbar__reportvalues > #reportvalues__drop  {
+    height : 100% !important;
+}
+
+.horizontalbar__reportvalues > #reportvalues__drop > div > div{
+    box-shadow: inset 2px 2px 5px #c1c9d2,inset -3px -3px 7px #fff !important;
+    border-radius : 5px ;
+}
+
+.horizontalbar__reportvalues > #reportvalues__drop > div > div > .dragicon{
+     visibility: visible;
+}
+.horizontalbar__reportvalues > #reportvalues__drop > div > div > .crossicon{
+/* color : var(--color-surface) !important; */
+visibility: hidden;
 }

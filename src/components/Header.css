@@ -14,24 +14,31 @@
     height : 40px;
 }
 
+.header__links{
+    width: 30px;
+    height : 30px;
+}
+
 .header__profile{
 padding :0px !important;
 box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff !important;
 border-radius: 20px !important;
-margin-right : 16px !important;
+margin-right : 64px !important;
 }
 
 .header__profile:hover
 {
-  box-shadow: 
+  /* box-shadow: 
     inset 1rem 1rem 2rem rgba(0,0,0,.1),
-    inset -1rem -1rem 2rem rgba(255,255,255,.5) !important;
+    inset -1rem -1rem 2rem rgba(255,255,255,.5) !important; */
+    box-shadow:  -6px 6px 12px #d9dde0,
+             6px -6px 12px #ffffff !important;
 }
 
 .header__title {
     font-size: 72px;
-    
-     background: -webkit-linear-gradient(#50CAFF, #0478FF);
+    font-family: ratiobold !important;
+     background: -webkit-linear-gradient( var( --color-KfinRed), var(--color-KfinBlue) );
      /* background: -webkit-linear-gradient(#EC5066, #374488);  */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -39,3 +46,6 @@ margin-right : 16px !important;
     margin-left: 16px !important;
   }
 
+  .homepage__header{
+      min-height: 50px !important;
+  }

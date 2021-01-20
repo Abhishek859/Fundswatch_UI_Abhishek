@@ -8,11 +8,15 @@ font-size: 70px;
 } 
 
 .login__logo{
-    width:150px;
+    width:125px;
     border-radius : 5px;
-    margin-top : 8px;
     padding : 4px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+    /* box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff; */
+   
+}
+
+.logo__div{
+text-align: center;
 }
 
 .login__grid1 , .login__graphs{
@@ -180,7 +184,7 @@ font-size: 70px;
 
   h1 {
     font-size: 80px;
-    background: -webkit-linear-gradient(#50CAFF, #0478FF);
+    background: -webkit-linear-gradient( var( --color-KfinRed), var(--color-KfinBlue) );
     /* background: -webkit-linear-gradient(#EC5066, #374488); */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -210,7 +214,7 @@ font-size: 70px;
     height: 450px;
     margin-top: 35px !important;
     margin : auto ;
-    padding: 45px 35px 35px 35px;
+    padding: 15px 35px 35px 35px;
     border-radius: 40px;
     background: #ecf0f3;
     box-shadow: 13px 13px 20px #cbced1,
@@ -263,7 +267,7 @@ font-size: 70px;
     font-family: 'Lato', sans-serif;
     color:#fff;
     text-align: center;
-    background: #374488;
+    background: var(--color-KfinBlue);
     box-shadow: 3px 3px 8px #b1b1b1,
                 -3px -3px 8px #ffffff;
     transition: 0.5s;
@@ -271,16 +275,17 @@ font-size: 70px;
   }
   .signin-button:hover {
     /* background:#403788; */
-    background: #EC5066;
+    background:var(--color-KfinRed);
     box-shadow: 
     /* inset 1rem 1rem 2rem rgba(0,0,0,.1),
     inset -1rem -1rem 2rem rgba(255,255,255,.5); */
   }
+  
   .signin-button:active {
     background:#374d88;
   }
   .link {
-    padding-top: 20px;
+    padding-top: 12px;
     text-align: center;
   }
   .link a {

@@ -17,7 +17,8 @@ import Axislogo from "../icons/AxisLogo.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom :  theme.spacing(2),
+    marginBottom :  theme.spacing(1.5),
+ 
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -48,13 +49,49 @@ const Header = () => {
     <div className={classes.root}>
       
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="homepage__header">
          
           <Typography variant="h4" className="header__title">
-            Funds Watch
+            Parker
           </Typography>
         
             <div>
+            <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+                className = "header__profile"
+              >
+                {/* <AccountCircle /> */}
+                <img src={Axislogo} alt= "Axis" className="header__logo" />
+              </IconButton>
+
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+                className = "header__profile"
+              >
+                {/* <AccountCircle /> */}
+                <img src={Axislogo} alt= "Axis" className="header__logo" />
+              </IconButton>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+                className = "header__profile"
+              >
+                {/* <AccountCircle /> */}
+                <img src={Axislogo} alt= "Axis" className="header__logo" />
+              </IconButton>
+
+
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"

@@ -8,7 +8,7 @@
 
   .MuiCheckbox-colorPrimary.Mui-checked	{
     /* color : linear-gradient(#50caff, #0478ff) !important; */
-    color : #0478ff  !important;
+    color : var(--color-KfinBlue) !important;
   }
 
 

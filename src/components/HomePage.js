@@ -39,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
       <Grid container spacing={3}>
         <Grid item xs={8}>
         <Grid item xs={12} className="login__grid1">
-             <h1 className="login__title">FundsWatch</h1>
-             <p style={{paddingLeft : "5px", letterSpacing:"2px"}}>POWERED BY</p>
-             <img className="login__logo" src={KfinLogo} alt="Kfintech"/>
+             <h1 className="login__title"  style={{marginBottom :"80px"}}>Parker</h1>
+             {/* <p style={{paddingLeft : "5px", letterSpacing:"2px"}}>POWERED BY</p> */}
+           
         </Grid>
         <Grid item xs={10} className="login__graphs"> <HomePageGraphs/> </Grid>
            
@@ -51,6 +51,8 @@ const useStyles = makeStyles((theme) => ({
           <div style={{marginBottom: "35px"}} >
            <div class="login-div">
       {/* <div class="logo"></div> */}
+      <div className="logo__div"> <img className="login__logo" src={KfinLogo} alt="Kfintech" style={{margin :"0px 0px 10px 0px", width :"150px"}}/></div>
+     
       <div class="title">Sign In</div>
       <div class="sub-title"><SocialMedia/></div>
       <div class="fields">

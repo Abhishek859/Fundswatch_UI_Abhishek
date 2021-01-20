@@ -1,13 +1,47 @@
+@font-face {
+  src: url(./Fonts/ratioBold.ttf);
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: ratiobold;
+}
+
+@font-face {
+  src: url(./Fonts/ratioLight.ttf);
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: ratiolight;
+}
+
+@font-face {
+  src: url(./Fonts/ratioMedium.ttf);
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: ratiomedium;
+}
+
+
+
 *{
   margin:0px;
+  font-family: ratiomedium !important;
   /* background-color: var(--color-surface) ; */
 }
 
 :root {
   --color-surface: #ecf0f3;
+  /* --color-surface: lightgray; */
+
   /* --color-surface: linear-gradient(145deg, #ccd5de, #f3feff); */
   --color-solid: #31344b;
   --color-primary: teal;
+  --color-KfinRed : #bd343b;
+  --color-KfinBlue : #3a4386;
+  --color-KfinRedShade : #ea5166;
+  /* --color-KfinRed : #50caff;
+  --color-KfinBlue : #0478ff; */
 }
 
 .App{
@@ -15,6 +49,8 @@
   background-color: var(--color-surface);
   height : 100vh;
 }
+
+
 
 /* .App {
   text-align: center;
@@ -54,3 +90,6 @@
     transform: rotate(360deg);
   }
 } */
+
+
+/* width */

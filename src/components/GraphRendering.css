@@ -8,7 +8,7 @@
     box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff !important;
     background-color: #ecf0f3 !important;
     font-weight: 800px !important;
-    color : #0478ff !important;
+    color : var(--color-KfinBlue)  !important;
     width : 130px !important;
     padding : 8px !important;
     margin-right: 8px!important;

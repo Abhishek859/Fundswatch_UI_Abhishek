@@ -24,6 +24,8 @@ import data1 from "../Dataa/index1";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ClearIcon from '@material-ui/icons/Clear';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,12 +49,14 @@ export default function HorizontalSidebar() {
   const temp = data1.map((x) => {
     return (
       <div>
-        <ReportDragable className="reportvalues" id={x.id} style={{ margin: "0px 0px 8px 8px" }}>
+        <ReportDragable className="reportvalues" id={x.id} style={{ margin: "0px 8px 8px 0px" }}>
         
-          <Item>
-          <DragIndicatorIcon/>
+          <Item className="horizontalbar__reportvalues">
+          <DragIndicatorIcon   className="addicon" style={{color : "#8B9EB0",fontSize:"20px"}}/>
             {x.title}
-            <OpenWithIcon/>
+            {/* <ZoomOutMapIcon style={{fontSize:"16px",marginLeft:"4px", transform:"rotate(45deg)",color : "#8799AA",visibility:"none"}}/> */}
+            <ClearIcon className="crossicon" style={{fontSize:"16px",marginLeft:"4px",color : "var(--color-surface)"}}/>
+
             </Item>
        
         </ReportDragable>
@@ -63,7 +67,7 @@ export default function HorizontalSidebar() {
   function FormRow() {
     return (
       <React.Fragment>
-         {/* <Item className="sidebar__title"style={{width:"154px", color: "#0776c5", fontStyle:"bold"}}>Dimensions1 <ExpandMoreIcon/></Item> */}
+         {/* <Item className="sidebar__title"style={{width:"154px", color: "var(--color-KfinBlue)", fontStyle:"bold"}}>Dimensions1 <ExpandMoreIcon/></Item> */}
         <ReportDroppable id="reportvalues__drop">
        
        
@@ -82,7 +86,7 @@ export default function HorizontalSidebar() {
      <ReportDroppable id="reportvalues__drop">
          
         <Grid container item xs={12} >
-        <Item className="horizontal__title"style={{width:"100px", height:"24px", color: "#0776c5", fontStyle:"bold"}}><h4>Report Values</h4><ChevronRightIcon/></Item>
+        <Item className="horizontal__title"style={{width:"100px", height:"30px", color: "var(--color-KfinBlue)", fontStyle:"bold", fontSize: "14px"}}><h4 style={{margin:"auto"}}>Report Values</h4><ChevronRightIcon/></Item>
         {temp}
         
         </Grid>
@@ -94,11 +98,15 @@ export default function HorizontalSidebar() {
 
 const Item = styled.div`
   display:flex;
-  min-width : 154px;
+  min-width : 134px;
+  height : 30px ;
   justify-content : space-between; 
-  padding: 8px;
+  padding: 0px 8px 0px 4px;
   color: #172B4D;
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: inset 2px 2px 5px #c1c9d2,inset -3px -3px 7px #fff!important;
+  background-color: var(--color-surface);
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 5px #c1c9d2,inset -3px -3px 7px #fff;
+  align-items : center ;
+  font-family : ratiomedium ;
+  font-size : 12px;
 `;

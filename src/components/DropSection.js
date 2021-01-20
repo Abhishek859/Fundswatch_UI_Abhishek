@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import "./DropSection.css";
+import "./Sidebar.css";
+import "./HorizontalSidebar.css";
 import Checkbox from '@material-ui/core/Checkbox';
 import DatePicker  from './DatePicker';
 import { dTo, dFrom} from './DatePicker';
@@ -95,23 +97,37 @@ const useStyles = makeStyles((theme) => ({
     //   color: theme.palette.text.secondary,
       height : '320px',
       // width : '270px',
-      margin:'auto',
-      marginTop: '16px',
+      margin:'16px',
+      // marginTop: '16px',
+      // marginRight: '8px',
       padding : '10px',
     //   background : 'linear-gradient(145deg, #ccd5de, #f3feff)',
       borderRadius : '4px',
       // border : '.0625rem solid white',
-      // boxShadow : 'inset 2px 2px 5px #b8b9be,inset -3px -3px 7px #fff!important;',
-      boxShadow : 'inset -10px -10px 10px 0px rgb(174,174,192,0.25),inset 10px 10px 10px 0px #ffffff,-10px -10px 30px 0px #ffffff, 10px 10px 30px 0px rgb(174,174,192,0.4)',
+      boxShadow : 'inset 2px 2px 5px #b8b9be,inset -3px -3px 7px #fff!important;',
+      boxShadow: 'inset 6px 6px 15px #c1c9d2, inset -9px -9px 14px #fff',
+      //boxShadow : 'inset -10px -10px 10px 0px rgb(174,174,192,0.25),inset 10px 10px 10px 0px #ffffff,-10px -10px 30px 0px #ffffff, 10px 10px 30px 0px rgb(174,174,192,0.4)',
     },
   }));
 
   const droppableStyle = {
     backgroundColor: "F0F0F3",
-    width: "270px",
+    width: "100%",
     height: "300px",
    padiing : "16px",
    overflow : "auto",
+  //  maxheight : "100%"
+  };
+
+  const droppableStyle1 = {
+    backgroundColor: "F0F0F3",
+    width: "100%",
+    height: "300px",
+   padiing : "16px",
+   overflow : "auto",
+   marginLeft : "8px",
+   marginRight : "8px",
+
   //  maxheight : "100%"
   };
 
@@ -201,7 +217,7 @@ export default function DropSection() {
           <Select
             style={{ fontFamily: "ratiomedium" }}
             id="dropdownColumns"
-            className="sort__by"
+            className="sort__by disabled"
             // onChange={SortChangedColumns}
             closeMenuOnSelect={false}
             defaultValue={{ label: x.a, value: x.a }}
@@ -214,7 +230,8 @@ export default function DropSection() {
           <Select
             style={{ fontFamily: "ratiomedium" }}
             id="dropdownSortFilters"
-            className="sort__by"
+            isMulti = {true}
+            className="sort__by disabled"
             // onChange={SortChanged}
             closeMenuOnSelect={false}
             defaultValue= {x.b}
@@ -228,7 +245,7 @@ export default function DropSection() {
           <Select
             style={{ fontFamily: "ratiomedium" }}
             id="dropdownSortSubject"
-            className="sort__by"
+            className="sort__by disabled"
             // onChange={SortChanged}
             closeMenuOnSelect={false}
             defaultValue={x.b}
@@ -241,6 +258,7 @@ export default function DropSection() {
           {!stringColumns.includes(x.a) && 
           <TextField
             variant="outlined"
+            className=" sort__by disabled"
             // label="Enter a value"
             style={{ fontFamily: "ratiomedium" }}
             style={{ color: "black" }}
@@ -258,24 +276,28 @@ export default function DropSection() {
                   <DatePicker/>
                 </div>
               </Grid>
-              <Grid item xs={3} > 
-                <div  className={classes.drop} >
+              <Grid item xs={3} className="dimensions__grid"> 
+                <div  className={classes.drop} id="dimensions__dropdiv">
                   <h3 style={{alignItems : "center"}}>Dimensions</h3>
                   <DimensionDroppable id="dimensions__drop"  style={droppableStyle} >
                   </DimensionDroppable>
                 </div>
               </Grid>
-              <Grid item xs={3}>
-                <div  className={classes.drop} style={{paddingRight: "18px"}} >
-                  <h3 style={{alignItems : "center"}}>Report Values</h3>
+              <Grid item xs={3} className="reportvalues__grid">
+                <div  className={classes.drop}  id="reportvalues__dropdiv">
+                  <h3 style={{alignItems : "center",}}>Report Values</h3>
                   <ReportDroppable id="dimensions__drop"  style={droppableStyle} >
                   </ReportDroppable>
                 </div>
               </Grid>
-              <Grid item xs={6}>
-                <div  className={classes.drop}>
-                  <h3>Logical f(x)</h3>
-                  {filters}
+              <Grid item xs={6} className="logical__grid">
+                <div  className={classes.drop}  id="logical__dropdiv">
+                  <h3 >Logical f(x)</h3>
+                  <div className="logical__div" >
+                    <div className="queries__section">
+                    {filters}
+                    </div>
+                  <div style={{display:"flex", flexDirection:"column"}}>
                   <div className="select__div">
                     <Select
                       ref={selectInputRefA}
@@ -314,12 +336,13 @@ export default function DropSection() {
                       closeMenuOnSelect={true}
                       components={animatedComponents}
                       placeholder="Select a condition"
-                      options={optionsFilters}
+                      options={optionsSubject}
                       style={{ padding: "10px" }}
                     />
                     }
                     { !stringColumns.includes(column) &&
                     <TextField
+                    className="logical___textfield"
                       variant="outlined"
                       // label="Enter a value"
                       style={{ fontFamily: "ratiomedium" }}
@@ -328,48 +351,62 @@ export default function DropSection() {
                       onChange={valueChanged}
                     />
                     }
+                    </div>
+                    <AddCircleOutlineIcon onClick={addFilter} style={{margin:"auto",marginTop:"8px",marginBottom:"8px",cursor:"pointer"}}/>
+                    </div>
                 </div>
-              <AddCircleOutlineIcon onClick={addFilter}/>
+            
               </div>
             </Grid>
             <Grid item xs={12}>
               <div className="body__output">
-                <span>Output Type</span> 
+                <span style={{fontWeight:"bold",color:"var(--color-KfinBlue)"}}>Output Type</span> 
                 <FormGroup row>
                 <FormControlLabel
+                  className = "body__checkbox"
                   control={<Checkbox checked={state.checkedA} onChange={handleChange} name="checkedA" />}
                   label="Data"
                 />
                 <FormControlLabel
+                  className = "body__checkbox"
                   control={<Checkbox checked={state.checkedB} onChange={handleChange} name="checkedB" />}
                   label="Graphical"
                 />
                 </FormGroup>
+
+                <Button variant="contained" color="secondary" className="view__button" onClick={pop}  >
+                    <h4>Save</h4>
+                  {/* <GraphRendering/> */}
+                </Button>
+
+
                 <Link to ="/excel">
                   <Button variant="contained" color="secondary" className="view__button" onClick={pop}  >
-                  View
+                    <h4>View</h4>
                   {/* <GraphRendering/> */}
                 </Button>
                 </Link>
                 <CsvDownload 
                   data={mockData}
                   filename="test_data.csv"
-                  style={{ //pass other props, like styles
-                    boxShadow:"inset 0px 1px 0px 0px #e184f3",
-                    background:"linear-gradient(to bottom, #c123de 5%, #a20dbd 100%)",
-                    backgroundColor:"#c123de",
-                    borderRadius:"6px",
-                    border:"1px solid #a511c0",
-                    display:"inline-block",
-                    cursor:"pointer","color":"#ffffff",
-                    fontSize:"15px",
-                    fontWeight:"bold",
-                    padding:"6px 24px",
-                    textDecoration:"none",
-                    textShadow:"0px 1px 0px #9b14b3"
-                    }}
+                  style={{height:"35px",padding:"0px"}}
+                  // style={{ //pass other props, like styles
+                  //   boxShadow:"inset 0px 1px 0px 0px #e184f3",
+                  //   background:"linear-gradient(to bottom, #c123de 5%, #a20dbd 100%)",
+                  //   backgroundColor:"#c123de",
+                  //   borderRadius:"6px",
+                  //   border:"1px solid #a511c0",
+                  //   display:"inline-block",
+                  //   cursor:"pointer","color":"#ffffff",
+                  //   fontSize:"15px",
+                  //   fontWeight:"bold",
+                  //   padding:"6px 24px",
+                  //   textDecoration:"none",
+                  //   textShadow:"0px 1px 0px #9b14b3"
+                  //   }}
+                  className="view__button"
                 >
-                  Download Test Data ✨
+                  <h4 >  Download </h4>
                 </CsvDownload> 
               </div>
             </Grid>

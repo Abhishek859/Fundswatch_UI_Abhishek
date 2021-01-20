@@ -16,6 +16,51 @@
 
 .sidebar__title{
     text-align: center !important;
-    box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;
-    
+    /* box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important; */
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff !important;
+    border: 0.0625rem solid white;
+    /* min-width:"154px" !important; */
+    color: "var(--color-KfinBlue)";
+    font-size: 14px;
 }
+
+.body__sidebar > #dimensions__drop  {
+    height : 100% !important;
+}
+
+.body__sidebar > #dimensions__drop > div > div{
+    box-shadow: inset 2px 2px 5px #c1c9d2,inset -3px -3px 7px #fff !important;
+    border-radius : 5px ;
+}
+
+.body__sidebar > #dimensions__drop > div > div > .dragicon{
+     visibility: visible;
+}
+.body__sidebar > #dimensions__drop > div > div > .crossicon{
+/* color : var(--color-surface) !important; */
+visibility: hidden;
+}
+
+
+.sidebar__dimensions:active{
+  background : var(--color-KfinBlue) !important;
+  box-shadow: inset 6px 6px 12px #313972,
+  inset -6px -6px 12px #434d9a !important;
+  color : white ;
+}
+
+.sidebar__dimensions:active > .crossicon{
+color :  var(--color-KfinBlue) !important;
+}
+
+.sidebar__dimensions:active > svg {
+    color: whitesmoke !important ;
+}
+
+.sidebar__dimensions:hover > #reportvalues__dropdiv{  
+    border:1px solid var(--color-KfinBlue) !important;
+    background-color: red !important;
+}
+
+
+
